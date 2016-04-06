@@ -4,7 +4,7 @@ MAINTAINER crossbuilder
 
 LABEL Version 0.1
 
-RUN cd /etc/yum.repos.d && curl -O https://winswitch.org/downloads/CentOS/winswitch.repo && yum repolist && yum -y update && yum -y install xpra libcanberra PackageKit firefox && yum clean all
+RUN cd /etc/yum.repos.d && curl -O https://winswitch.org/downloads/CentOS/winswitch.repo && yum repolist && yum -y update && yum -y install xpra libcanberra-gtk2 PackageKit PackageKit-gtk3-module xterm firefox && yum clean all
 
 RUN dbus-uuidgen >/etc/machine-id 
 
