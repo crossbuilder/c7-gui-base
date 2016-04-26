@@ -20,6 +20,7 @@ VOLUME [ "/run" ]
 RUN yum -y update \
 	&& yum -y install epel-release \
 	&& yum repolist \
+	&& rpm -i --force --nosignature --nodeps http://mirror.centos.org/centos/7/os/x86_64/Packages/gnome-keyring-3.14.0-1.el7.x86_64.rpm ; true \
 	&& yum -y groupinstall "MATE Desktop" \
 	&& yum -y install lightdm \
 	&& yum -y install openssh libcanberra-gtk2 PackageKit PackageKit-gtk3-module xterm firefox rsync \
