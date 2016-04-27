@@ -28,7 +28,7 @@ RUN yum -y update \
 
 RUN cd /etc/yum.repos.d \
 	&& curl -O https://winswitch.org/downloads/CentOS/winswitch.repo \
-	&& rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm \
+#	&& rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm \
 	&& yum -y install xpra
 	&& yum clean all
 
