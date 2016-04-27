@@ -29,7 +29,7 @@ RUN yum -y update \
 RUN cd /etc/yum.repos.d \
 	&& curl -O https://winswitch.org/downloads/CentOS/winswitch.repo \
 #	&& rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm \
-	&& yum -y install xpra
+	&& yum -y install xpra \
 	&& yum clean all
 
 #RUN rpm -vi https://github.com/vlisivka/docker-centos7-systemd-unpriv/releases/download/v1.0/docker-centos7-systemd-unpriv-1.0-1.el7.centos.noarch.rpm \
