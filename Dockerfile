@@ -7,7 +7,7 @@ LABEL Version 0.3
 #     https://github.com/vlisivka/docker-centos7-systemd-unpriv/releases/download/v1.0/docker-centos7-systemd-unpriv-1.0-1.el7.centos.noarch.rpm     
 
 
-ENV container=docker
+ENV container docker
 
 # NOTE: Systemd needs /sys/fs/cgroup directoriy to be mounted from host in
 # read-only mode. (Required).
@@ -32,10 +32,19 @@ RUN cd /etc/yum.repos.d \
 	&& yum -y install xpra
 	&& yum clean all
 
-RUN rpm -vi https://github.com/vlisivka/docker-centos7-systemd-unpriv/releases/download/v1.0/docker-centos7-systemd-unpriv-1.0-1.el7.centos.noarch.rpm \
+#RUN rpm -vi https://github.com/vlisivka/docker-centos7-systemd-unpriv/releases/download/v1.0/docker-centos7-systemd-unpriv-1.0-1.el7.centos.noarch.rpm \
 #RUN dbus-uuidgen >/etc/machine-id 
 
-CMD [ "/usr/sbin/init.sh" ]
+#RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
+#rm -f /lib/systemd/system/multi-user.target.wants/*;\
+#rm -f /etc/systemd/system/*.wants/*;\
+#rm -f /lib/systemd/system/local-fs.target.wants/*; \
+#rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
+#rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
+#rm -f /lib/systemd/system/basic.target.wants/*;\
+#rm -f /lib/systemd/system/anaconda.target.wants/*;
+
+#CMD [ "/usr/sbin/init" ]
 
 EXPOSE 22 10010
 
