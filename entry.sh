@@ -5,7 +5,6 @@ set -x
 pid=0
 
 #trap "echo TRAPed signal ; su - ${XPRA_USER} -c xpra stop " HUP INT QUIT TERM KILL TERM
-trap "echo TRAPed signal ; killall tail " HUP INT QUIT TERM KILL TERM
 
 
 # SIGTERM-handler
@@ -40,6 +39,7 @@ sleep 2
 tail -f /home/${XPRA_USER}/.xpra/*.log &
 pid="$!"
 
+trap "echo TRAPed signal ; kill $pid " HUP INT QUIT TERM KILL 
 wait $pid
 
 echo "killing .."
