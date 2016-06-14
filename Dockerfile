@@ -25,13 +25,14 @@ RUN cd /etc/yum.repos.d \
 	&& yum -y install xpra \
 	&& yum clean all
 
-ENV XPRA_USER sdk
-ENV XPRA_PW sdk
+ENV XPRA_USER="sdk" XPRA_PW="sdk"
 
 COPY cross.sh /etc/profile.d/
 
-COPY prepare.sh entry.sh run_xpra.sh /root/
+COPY prepare.sh entry.sh /root/
+COPY run_xpra.sh /usr/bin
 
 ENTRYPOINT [ "/root/entry.sh" ]
+CMD [ " --start-child=mate-terminal" ]
 EXPOSE 22 10010
 
