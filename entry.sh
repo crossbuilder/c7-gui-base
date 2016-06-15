@@ -13,9 +13,7 @@ if [ "x$DRY" == "xNO" ]; then
     dbus-uuidgen >/etc/machine-id 
   fi
 
-  if [ ! -d /home/${XPRA_USER} ]; then
-    useradd -m ${XPRA_USER} && echo "${XPRA_USER}:${XPRA_PW}" | chpasswd
-  fi
+  useradd -m ${XPRA_USER} && echo "${XPRA_USER}:${XPRA_PW}" | chpasswd
 
   echo executin: "$@"
 
