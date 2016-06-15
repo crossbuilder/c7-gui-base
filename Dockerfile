@@ -25,7 +25,7 @@ RUN cd /etc/yum.repos.d \
 	&& yum -y install xpra \
 	&& yum clean all
 
-ENV XPRA_USER="sdk" XPRA_PW="sdk"
+ENV XPRA_USER="sdk" XPRA_PW="sdk" DRY="NO"
 
 COPY cross.sh /etc/profile.d/
 
