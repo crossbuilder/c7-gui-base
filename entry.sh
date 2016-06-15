@@ -7,7 +7,7 @@ pid=0
 echo xpra user: $XPRA_USER
 echo pw: $XPRA_PW
 
-if [ "x$DRY" == "xNO" ];
+if [ "x$DRY" == "xNO" ]; then
 
   if [ ! -f /etc/machine-id ]; then
     dbus-uuidgen >/etc/machine-id 
