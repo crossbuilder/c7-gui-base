@@ -26,7 +26,7 @@ RUN cd /etc/yum.repos.d \
 	&& yum clean all
 
 # Make a backup of /etc/ssh so these files can be restored if /etc/ssh is mounted as a {persistent} volume
-RUN cp -a /etc/ssh /root/backupi-ssh/
+RUN cp -a /etc/ssh /root/backup-ssh/
 
 ENV XPRA_USER="sdk" XPRA_PW="sdk" DRY="NO"
 
