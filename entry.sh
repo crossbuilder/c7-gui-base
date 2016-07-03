@@ -30,6 +30,7 @@ else
 fi
 
 trap "echo TRAPed signal ; kill $pid " HUP INT QUIT TERM KILL 
+rm /var/run/nologin
 wait $pid
 
 echo "killing .."
