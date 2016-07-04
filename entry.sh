@@ -9,7 +9,7 @@ echo pw: $XPRA_PW
 
 if [ "x$DRY" == "xNO" ]; then
 
-  if [ ! -f /etc/machine-id ]; then
+  if [ ! -s /etc/machine-id ]; then
     dbus-uuidgen >/etc/machine-id 
   fi
 
