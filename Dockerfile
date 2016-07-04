@@ -18,6 +18,7 @@ RUN yum -y update \
 	&& yum -y groupinstall "MATE Desktop" \
 	&& yum -y install lightdm \
 	&& yum -y install openssh libcanberra-gtk2 PackageKit PackageKit-gtk3-module xterm firefox rsync libpng12 \
+	&& yum -y install gdk-pixbuf2-devel gtk2-devel \
 	&& yum clean all
 
 RUN cd /etc/yum.repos.d \
