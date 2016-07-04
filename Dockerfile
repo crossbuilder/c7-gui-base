@@ -17,7 +17,7 @@ RUN yum -y update \
 	&& yum repolist \
 	&& yum -y groupinstall "MATE Desktop" \
 	&& yum -y install lightdm \
-	&& yum -y install openssh libcanberra-gtk2 PackageKit PackageKit-gtk3-module xterm firefox rsync \
+	&& yum -y install openssh libcanberra-gtk2 PackageKit PackageKit-gtk3-module xterm firefox rsync libpng12 \
 	&& yum clean all
 
 RUN cd /etc/yum.repos.d \
